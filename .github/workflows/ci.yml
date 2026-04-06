@@ -26,10 +26,12 @@ jobs:
       - name: Run MLflow Project
         run: |
           cd MLProject
+          # Menjalankan mlflow project di dalam folder MLProject
           mlflow run . --env-manager local
 
       - name: Upload mlruns artifact
         uses: actions/upload-artifact@v4
         with:
           name: mlruns-artifact
+          # Mengambil folder mlruns yang ada di dalam folder MLProject
           path: MLProject/mlruns
